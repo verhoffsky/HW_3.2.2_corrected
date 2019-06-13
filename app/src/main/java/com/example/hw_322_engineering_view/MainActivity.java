@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showText = (TextView) findViewById(R.id.show_text);
+        showText = findViewById(R.id.show_text);
 
-        simpleCalc = (LinearLayout) findViewById(R.id.simple_calc);
-        engineerCalc = (LinearLayout) findViewById(R.id.engineer_calc);
+        simpleCalc = findViewById(R.id.simple_calc);
+        engineerCalc = findViewById(R.id.engineer_calc);
 
         simpleCalc.setVisibility(View.VISIBLE);
         engineerCalc.setVisibility(View.GONE);
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_9).setOnClickListener(buttonsClickListener);
         findViewById(R.id.button_0).setOnClickListener(buttonsClickListener);
         findViewById(R.id.button_point).setOnClickListener(buttonsClickListener);
+        findViewById(R.id.button_clean).setOnClickListener(buttonsClickListener);
 
     }
 
@@ -87,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.button_point:
                     showText.append(".");
                     break;
+                case R.id.button_clean:
+                    showText.setText("");
+                    break;
+
             }
         }
     });
